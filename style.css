@@ -50,32 +50,47 @@ body {
   left: 0;
   width: 70px;
   animation-name: DriveMario;
-  animation-duration: 3s;
+  animation-duration: 10s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   z-index: 99;
+  transform: 0.3s all ease-in-out;
 }
 
 .luigi {
-  animation-duration: 3.5s;
+  animation-duration: 10.5s;
   animation-name: DriveLuigi;
-  top: 80px;
+  top: 70px;
 }
 
 @keyframes DriveMario {
-  from {
+  0% {
     left: 0;
   }
-  to {
-    left: 100%;
+  50% {
+    left: 150%;
+  }
+  75% {
+    transform: rotateY(180deg);
+    left: -150%;
+  }
+  100% {
+    left: 0%;
   }
 }
 @keyframes DriveLuigi {
-  from {
+  0% {
     left: 0;
   }
-  to {
-    left: 100%;
+  50% {
+    left: 150%;
+  }
+  75% {
+    transform: rotateY(180deg);
+    left: -150%;
+  }
+  100% {
+    left: 0%;
   }
 }
 
