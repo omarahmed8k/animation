@@ -131,10 +131,10 @@ body {
   .luigi {
     width: 30px;
     top: 10%;
-    animation-duration: 1.5s;
+    animation-duration: 6s;
   }
   .luigi {
     top: 65%;
-    animation-duration: 2s;
+    animation-duration: 7s;
   }
 }
