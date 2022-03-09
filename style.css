@@ -6,10 +6,9 @@
 
 html,
 body {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
-  margin: 0;
 }
 
 .grass,
@@ -32,14 +31,11 @@ body {
   position: relative;
   height: 30%;
   background: dimgrey;
-  box-sizing: border-box;
   border-top: 10px solid grey;
   border-bottom: 10px solid grey;
-  width: 100%;
 }
 
 .lines {
-  box-sizing: border-box;
   border: 5px dashed #fff;
   height: 0px;
   width: 100%;
@@ -47,27 +43,54 @@ body {
   top: 45%;
 }
 
-/*// ELEMENTS TO ANIMATE //*/
-
-.mario {
+.mario,
+.luigi {
   position: absolute;
-  top: -15%;
+  top: -25px;
   left: 0;
   width: 70px;
-  animation-name: Drive;
+  animation-name: DriveMario;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  z-index: 99;
 }
 
-/*/
-/ KEYFRAMES //*/
+.luigi {
+  animation-duration: 3.5s;
+  animation-name: DriveLuigi;
+  top: 80px;
+}
 
-@keyframes Driv {
+@keyframes DriveMario {
   from {
     left: 0;
   }
   to {
     left: 100%;
+  }
+}
+@keyframes DriveLuigi {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .lines {
+    border-width: 2px;
+  }
+  .mario,
+  .luigi {
+    width: 30px;
+    top: 10%;
+    animation-duration: 1.5s;
+  }
+  .luigi {
+    top: 65%;
+    animation-duration: 2s;
   }
 }
