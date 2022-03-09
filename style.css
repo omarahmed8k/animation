@@ -20,6 +20,15 @@ body {
 .sky {
   height: 40%;
   background: skyblue;
+  position: relative;
+}
+
+.cloud {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  width: 100px;
+  animation: Cloud 20s infinite;
 }
 
 .grass {
@@ -78,6 +87,7 @@ body {
     left: 0%;
   }
 }
+
 @keyframes DriveLuigi {
   0% {
     left: 0;
@@ -91,6 +101,25 @@ body {
   }
   100% {
     left: 0%;
+  }
+}
+
+@keyframes Cloud {
+  0% {
+    right: 25%;
+    transform: translateY(10px);
+  }
+  50% {
+    right: 50%;
+    transform: translateY(30px);
+  }
+  75% {
+    right: 75%;
+    transform: translateY(20px);
+  }
+  100% {
+    right: 25%;
+    transform: translateY(10px);
   }
 }
 
