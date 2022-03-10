@@ -20,7 +20,7 @@ body {
 .sky {
   height: 40%;
   background: skyblue;
-  position: relative;
+  animation: Sky 20s infinite;
 }
 
 .cloud {
@@ -28,7 +28,16 @@ body {
   top: 20px;
   right: 25px;
   width: 100px;
-  animation: Cloud 20s infinite;
+}
+
+.cloud:nth-child(1) {
+  width: 200px;
+  left: 0;
+  right: unset;
+  animation: CloudB 30s infinite;
+}
+.cloud:nth-child(2) {
+  animation: CloudA 50s infinite;
 }
 
 .grass {
@@ -37,7 +46,6 @@ body {
 }
 
 .road {
-  position: relative;
   height: 30%;
   background: dimgrey;
   border-top: 10px solid grey;
@@ -58,68 +66,84 @@ body {
   top: -25px;
   left: 0;
   width: 70px;
-  animation-name: DriveMario;
-  animation-duration: 10s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
   z-index: 99;
-  transform: 0.3s all ease-in-out;
+  animation: Drive 5s 1s cubic-bezier(0.64, -0.33, 0.8, 1.12) infinite;
+  transform: rotateY(0deg);
 }
 
 .luigi {
-  animation-duration: 10.5s;
-  animation-name: DriveLuigi;
   top: 70px;
+  animation: Drive 5.3s 1s cubic-bezier(0.64, -0.33, 0.8, 1.12) infinite;
 }
 
-@keyframes DriveMario {
+
+
+@keyframes Drive {
   0% {
     left: 0;
   }
   50% {
-    left: 150%;
-  }
-  75% {
-    transform: rotateY(180deg);
-    left: -150%;
+    left: 100%;
   }
   100% {
-    left: 0%;
-  }
-}
-
-@keyframes DriveLuigi {
-  0% {
     left: 0;
   }
-  50% {
-    left: 150%;
-  }
-  75% {
-    transform: rotateY(180deg);
-    left: -150%;
-  }
-  100% {
-    left: 0%;
-  }
 }
 
-@keyframes Cloud {
+@keyframes CloudA {
   0% {
     right: 25%;
     transform: translateY(10px);
+    opacity: 0.5;
   }
   50% {
     right: 50%;
     transform: translateY(30px);
+    opacity: 0.8;
   }
   75% {
     right: 75%;
     transform: translateY(20px);
+    opacity: 1;
   }
   100% {
     right: 25%;
     transform: translateY(10px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes CloudB {
+  0% {
+    left: 10%;
+    transform: translateY(20px);
+  }
+  50% {
+    left: 30%;
+    transform: translateY(50px);
+  }
+  75% {
+    left: 55%;
+    transform: translateY(35px);
+  }
+  100% {
+    left: 10%;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes Sky {
+  0% {
+    background-color: #98d1db;
+  }
+  50% {
+    background-color: #98d1db50;
+  }
+  75% {
+    background-color: #98d1db80;
+  }
+  100% {
+    background-color: #98d1db;
   }
 }
 
@@ -137,4 +161,26 @@ body {
     top: 65%;
     animation-duration: 7s;
   }
+}
+.menu {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  top: 25px;
+  padding: 0;
+  list-style: none;
+  z-index: 9999999999;
+}
+
+.menu a {
+  font-size: 30px;
+  color: #121212;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: cursive, sans-serif;
 }

@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 500px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  background-color: #ff3737;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s all linear;
+  gap: 30px;
+}
+
+.card .circle:hover {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 2px 4px #00000050;
+  background-color: #87ceeb;
+}
+
+.circle .content {
+  width: 180px;
+  display: none;
+  transition: 1s all linear;
+}
+
+.circle:hover .content {
+  display: block;
+  animation: ContentDiv 0.5s linear;
+}
+
+.card .circle img {
+  position: relative;
+  right: 0;
+  width: 150px;
+  z-index: 9999;
+  transition: 0.5s all ease;
+}
+
+.card .circle:hover img {
+  width: 250px;
+  right: 20px;
+  animation: Pepsi 0.5s linear;
+}
+
+.card h3 {
+  font-size: 30px;
+  font-family: cairo;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.card p {
+  font-size: 20px;
+  font-family: cairo;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card button {
+  font-size: 18px;
+  font-family: cairo;
+  font-weight: bold;
+  margin-bottom: 0px;
+  color: #004883;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+@keyframes ContentDiv {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes Pepsi {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+.menu {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  top: 25px;
+  padding: 0;
+  list-style: none;
+  z-index: 9999999999;
+}
+
+.menu a {
+  font-size: 30px;
+  color: #121212;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: cursive, sans-serif;
+}

@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body svg {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+#Mobile {
+  animation: Girl 1s linear infinite alternate;
+}
+
+#Location {
+  animation: Location 2s ease infinite alternate;
+}
+
+#Path_34 {
+  animation: Arm 1s ease infinite alternate;
+}
+
+#Tree1 {
+  animation: Tree1 3s ease infinite alternate;
+}
+
+#Tree2 {
+  animation: Tree2 3s ease infinite alternate;
+}
+
+#Path_32 {
+  animation: Hair 1s ease infinite alternate;
+}
+
+@keyframes Girl {
+  from {
+    transform: translate(290px, 55px);
+  }
+  to {
+    transform: translate(290px, 45px);
+  }
+}
+@keyframes Location {
+  from {
+    transform: translate(277px, 5px);
+  }
+  to {
+    transform: translate(277px, 65px);
+  }
+}
+@keyframes Arm {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+@keyframes Tree1 {
+  from {
+    transform: translate(280px, 55px);
+  }
+  to {
+    transform: translate(320px, 55px);
+  }
+}
+@keyframes Tree2 {
+  from {
+    transform: translate(280px, 55px);
+  }
+  to {
+    transform: translate(320px, 55px);
+  }
+}
+@keyframes Hair {
+  from {
+    transform: translate(-2px, 2px);
+  }
+  to {
+    transform: translate(1px, 1px);
+  }
+}
+.menu {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  top: 25px;
+  padding: 0;
+  list-style: none;
+  z-index: 9999999999;
+}
+
+.menu a {
+  font-size: 30px;
+  color: #121212;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: cursive, sans-serif;
+}
